@@ -1,0 +1,77 @@
+syntax on
+
+"call plug#begin('~/.config/nvim/plugged')
+"
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'majutsushi/tagbar'
+"Plug 'scrooloose/nerdtree'
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'bagrat/vim-buffet'
+"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+"
+"Plug 'morhetz/gruvbox'
+"call plug#end()
+"
+"filetype plugin on
+
+set cursorline
+set hlsearch
+set autoindent
+set smartindent
+set smartcase
+set ignorecase
+set cindent
+set nuw=2
+set ts=4
+set sts=4
+set shiftwidth=4
+set list lcs=trail:·,tab:├─
+set smarttab
+set ruler
+set autowrite
+set autoread
+
+set background=dark "gruvbox theme set
+
+hi! BuffetTab ctermfg=190 ctermbg=234
+hi! BuffetBuffer ctermfg=85 ctermbg=235
+hi! BuffetCurrentBuffer cterm=bold ctermfg=17 ctermbg=190
+hi! BuffetActiveBuffer cterm=bold ctermfg=white ctermbg=234
+
+let g:snipMate = { 'snippet_version' : 1 }
+let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_enable_on_vim_startup = 1
+let g:indent_guides_guide_auto_colors =0
+let g:rainbow#pairs = [['(', ')'], ['{', '}'], ['[', ']']]
+let g:airline#extensions#tabline#enabled = 0
+let g:buffet_show_index = 1
+let NERDTreeShowHidden = 1
+"let g:gruvbox_invert_indent_guides = 1
+colorscheme gruvbox
+
+autocmd VimEnter, Colorscheme * :hi IndentGuidesOdd ctermfg=darkcyan ctermbg=236
+autocmd VimEnter, Colorscheme * :hi IndentGuidesEven ctermfg=darkcyan ctermbg=237
+autocmd FileType * RainbowParentheses
+
+map <F2> :GoRun<cr>
+map <F3> :GoBuild<cr>
+map <F4> :GoImport
+map <F5> :NERDTreeToggle<cr>
+map <F6> :Tagbar<cr>
+map <F7> :bn<cr>
+map <F8> :set nu!<cr>
+map <F9> :set list!<cr>
+map <F10> :IndentGuidesToggle<cr>
+
+nmap <leader>1 <Plug>BuffetSwitch(1)
+nmap <leader>2 <Plug>BuffetSwitch(2)
+nmap <leader>3 <Plug>BuffetSwitch(3)
+nmap <leader>4 <Plug>BuffetSwitch(4)
+nmap <leader>5 <Plug>BuffetSwitch(5)
+nmap <leader>6 <Plug>BuffetSwitch(6)
+nmap <leader>7 <Plug>BuffetSwitch(7)
+nmap <leader>8 <Plug>BuffetSwitch(8)
+nmap <leader>9 <Plug>BuffetSwitch(9)
+nmap <leader>0 <Plug>BuffetSwitch(10)
